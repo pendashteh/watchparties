@@ -49,10 +49,17 @@ Add an object to the `parties` array. Org references are keys that resolve from 
 | `stream` | object | `url`, `label`, `displayUrl[2]`, `primaryCta`, `joinCta`, `mobileSub`, `note` |
 | `externalLinks` | array | Extra CTA links in the hero row |
 | `topbarLinks` | array | Nav links in the party topbar |
+| `times` | array | Schedule entries — `{ type, label, start, url? }` (see below) |
 | `sections.attendance` | string | Section heading |
 | `attendance` | array | How-to-attend cards (see below) |
 | `about` | object | `title`, `paragraphs[]`, `features[]` |
 | `footer` | object | `org`, `orgUrl`, `address`, `extraLinks[]` |
+
+**Times entry:**
+```json
+{ "type": "live", "label": "Tue 13 May · 7:30pm AEST", "start": "2026-05-13T19:30:00+10:00" }
+```
+`type` controls badge colour: `"live"` (red, animated), `"replay"` (blue), `"playback"` (gold). `url` is optional — overrides the venue URL for that specific time slot.
 
 **Attendance card:**
 ```json
