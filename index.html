@@ -235,20 +235,27 @@ body {
 }
 .share-btn:hover { border-color: var(--gold); color: var(--gold); }
 
-/* Times list */
-.times-list { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.6rem 0 0.1rem; }
-.time-chip {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; font-weight: 500;
-  padding: 3px 9px; border-radius: 6px;
+/* Schedule */
+.schedule-block { margin: 1rem 0 0.75rem; }
+.schedule-label {
+  font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase;
+  font-weight: 600; color: var(--muted); margin-bottom: 0.55rem;
 }
-.time-chip.live    { background: rgba(192,41,42,0.12); border: 1px solid rgba(192,41,42,0.35); color: #f87171; }
-.time-chip.replay  { background: rgba(55,138,221,0.1);  border: 1px solid rgba(55,138,221,0.3);  color: #7ab8f0; }
-.time-chip.playback { background: rgba(201,162,39,0.1); border: 1px solid rgba(201,162,39,0.3);  color: var(--gold-light); }
-.time-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.live    .time-dot { background: #f87171; animation: pulse 1.6s infinite; }
-.replay  .time-dot { background: #7ab8f0; }
-.playback .time-dot { background: var(--gold); }
+.schedule-entries { display: flex; flex-direction: column; gap: 0.45rem; }
+.schedule-entry { display: flex; align-items: center; gap: 0.75rem; }
+.sched-type {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 5px;
+  flex-shrink: 0; white-space: nowrap;
+}
+.schedule-entry.live    .sched-type { background: rgba(192,41,42,0.18); color: #f87171; }
+.schedule-entry.replay  .sched-type { background: rgba(55,138,221,0.15);  color: #7ab8f0; }
+.schedule-entry.playback .sched-type { background: rgba(201,162,39,0.15); color: var(--gold-light); }
+.sched-when { font-size: 1rem; font-weight: 600; color: var(--white); }
+.sched-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.schedule-entry.live    .sched-dot { background: #f87171; animation: pulse 1.6s infinite; }
+.schedule-entry.replay  .sched-dot { background: #7ab8f0; }
+.schedule-entry.playback .sched-dot { background: var(--gold); }
 
 /* Share modal */
 .modal-overlay {
@@ -704,10 +711,18 @@ body {
     // Times / schedule
     var tl = document.getElementById('times-list');
     if (party.times && party.times.length) {
-      tl.innerHTML = party.times.map(function(t) {
-        return '<div class="time-chip ' + esc(t.type) + '">' +
-          '<span class="time-dot"></span>' + esc(t.label) + '</div>';
-      }).join('');
+      tl.className = 'schedule-block';
+      tl.innerHTML =
+        '<div class="schedule-label">Schedule</div>' +
+        '<div class="schedule-entries">' +
+        party.times.map(function(t) {
+          return '<div class="schedule-entry ' + esc(t.type) + '">' +
+            '<span class="sched-dot"></span>' +
+            '<span class="sched-type">' + esc(t.type) + '</span>' +
+            '<span class="sched-when">' + esc(t.label) + '</span>' +
+            '</div>';
+        }).join('') +
+        '</div>';
       tl.style.display = '';
     } else {
       tl.style.display = 'none';
