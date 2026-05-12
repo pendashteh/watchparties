@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "inspire9": {
+      "name": "inspire9",
+      "url": "https://inspire9.com",
+      "logo": "logos/inspire9.webp",
+      "logoBg": "#ffffff",
+      "logoPadding": "4px 10px",
+      "logoHeight": 24,
+      "mark": "i9",
+      "markBg": "#c9a227",
+      "markColor": "#0d1f3c"
+    },
+    "electron-workshop": {
+      "name": "Electron Workshop",
+      "url": "https://electronworkshop.org",
+      "logo": "logos/electron-workshop.svg",
+      "logoHeight": 28,
+      "mark": "EW"
+    }
+  }
+}

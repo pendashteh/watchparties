@@ -1,0 +1,81 @@
+{
+  "parties": [
+    {
+      "code": "budget-2026",
+      "pageTitle": "Budget Watch Party @ inspire9",
+      "title": ["Budget", "Watch Party"],
+      "brand": "inspire9",
+      "organizer": "inspire9",
+      "badges": [
+        { "text": "🇦🇺 Federal Budget", "style": "filled" },
+        { "text": "inspire9 Initiative", "style": "outline" }
+      ],
+      "subtitle": "Watch the <strong>Federal Budget announcement live</strong> with the inspire9 community — gather in the Kitchen or join from anywhere via eVenue. Chat with everyone in real time, whether you're in the room or online.",
+      "stream": {
+        "url": "https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join",
+        "label": "eVenue — Budget 2026 Watch Party",
+        "displayUrl": ["evenue.electronworkshop.com.au", "/rooms/vpu-ci4-ut4-14k/join"],
+        "primaryCta": "Enter eVenue",
+        "joinCta": "Join on eVenue →",
+        "mobileSub": "Tap to join the live eVenue — free",
+        "note": "Free for all online attendees · No account required"
+      },
+      "externalLinks": [
+        { "label": "budget.gov.au ↗", "url": "https://budget.gov.au/" }
+      ],
+      "topbarLinks": [
+        { "label": "inspire9.com", "url": "https://inspire9.com" },
+        { "label": "budget.gov.au", "url": "https://budget.gov.au/" }
+      ],
+      "sections": {
+        "attendance": "How to attend"
+      },
+      "attendance": [
+        {
+          "variant": "members",
+          "icon": "🍳",
+          "title": "inspire9 Kitchen",
+          "paragraphs": [
+            "Watch live at the <strong>inspire9 Kitchen</strong>, Level 1, 41–43 Stewart Street, Richmond. Gather with fellow members and react together in person.",
+            "<strong>Exclusive to inspire9 members.</strong> Check your inbox or Slack for details."
+          ],
+          "tag": "Members Only"
+        },
+        {
+          "variant": "online",
+          "icon": "💻",
+          "title": "Online via eVenue",
+          "paragraphs": [
+            "Join from anywhere — completely free. <strong>eVenue</strong> by Electron Workshop connects online and in-person attendees in one live chat while watching together.",
+            "No account, no cost. Just click the link and you're in."
+          ],
+          "tag": "✓ Free for Anyone"
+        }
+      ],
+      "about": {
+        "title": "About eVenue",
+        "paragraphs": [
+          "<strong>eVenue</strong> is a live event platform that bridges in-room and online audiences. Everyone watches the same stream while chatting together — no divide between who's there and who's remote.",
+          "This eVenue is sponsored by <strong>Electron Workshop</strong>, Melbourne's community-driven digital infrastructure provider."
+        ],
+        "features": [
+          { "text": "<strong>Shared live stream</strong> — everyone watches the same Budget broadcast" },
+          { "text": "<strong>Unified live chat</strong> — in-person and online in one conversation" },
+          { "text": "<strong>No login needed</strong> — pick a name and you're live instantly" },
+          { "text": "<strong>Free for all</strong> — open to anyone online, anywhere in Australia" }
+        ]
+      },
+      "sponsor": "electron-workshop",
+      "sponsorLabel": "eVenue sponsored by",
+      "sponsorRole": "eVenue sponsor",
+      "footer": {
+        "org": "inspire9",
+        "orgUrl": "https://inspire9.com",
+        "address": "Level 1, 41–43 Stewart St, Richmond VIC 3121",
+        "extraLinks": [
+          { "label": "budget.gov.au", "url": "https://budget.gov.au/" }
+        ]
+      }
+    }
+  ]
+}
