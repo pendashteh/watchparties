@@ -11,10 +11,9 @@
         { "text": "inspire9 Initiative", "style": "outline" }
       ],
       "subtitle": "Watch the <strong>Federal Budget announcement live</strong> with the inspire9 community — gather in the Kitchen or join from anywhere via eVenue. Chat with everyone in real time, whether you're in the room or online.",
-      "stream": {
-        "url": "https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join",
+      "venue": {
+        "url": "https://evenue.electronworkshop.com.au/rooms/xcu-1b1-lpp-m5d/join",
         "label": "eVenue — Budget 2026 Watch Party",
-        "displayUrl": ["evenue.electronworkshop.com.au", "/rooms/vpu-ci4-ut4-14k/join"],
         "primaryCta": "Enter eVenue",
         "joinCta": "Join on eVenue →",
         "mobileSub": "Tap to join the live eVenue — free",

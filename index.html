@@ -70,6 +70,7 @@ body {
   font-weight: 900; font-size: 16px;
   letter-spacing: -1px; flex-shrink: 0;
 }
+.site-mark { width: 34px; height: 34px; display: block; flex-shrink: 0; }
 .org-wordmark { font-weight: 600; font-size: 17px; color: var(--white); letter-spacing: -0.3px; }
 
 .topbar-nav {
@@ -432,7 +433,7 @@ body {
   <div class="page-wrap">
     <nav class="topbar">
       <a href="#" onclick="goHome(event)" class="org-logo">
-        <div class="org-mark">WP</div>
+        <img src="logos/watch-parties.svg" alt="" class="site-mark">
         <span class="org-wordmark">Watch Parties</span>
       </a>
     </nav>
@@ -557,7 +558,7 @@ body {
   // --- rendering ---
 
   function renderPartyView(party) {
-    var s = party.stream;
+    var v = party.venue;
     var organizer = ENTITIES[party.organizer] || {};
     var sponsor   = ENTITIES[party.sponsor]   || null;
     document.title = party.pageTitle;
@@ -567,10 +568,14 @@ body {
     logoEl.href = organizer.url || '#';
     logoEl.innerHTML = entityLogoHtml(organizer);
 
+    // Derive display URL from the single venue URL
+    var parsedUrl;
+    try { parsedUrl = new URL(v.url); } catch(e) { parsedUrl = { hostname: v.url, pathname: '' }; }
+
     // Mobile join strip
     document.querySelector('.mjs-text').innerHTML =
-      '&#9654; ' + esc(party.title.join(' ')) + '<small>' + esc(s.mobileSub) + '</small>';
-    document.querySelector('.mjs-btn').href = s.url;
+      '&#9654; ' + esc(party.title.join(' ')) + '<small>' + esc(v.mobileSub) + '</small>';
+    document.querySelector('.mjs-btn').href = v.url;
 
     // Topbar nav
     document.querySelector('#view-party .topbar-nav').innerHTML =
@@ -596,18 +601,18 @@ body {
 
     // Hero CTA row
     document.querySelector('.hero-cta-row').innerHTML =
-      '<a class="primary-btn" href="' + esc(s.url) + '" target="_blank">&#9654; ' + esc(s.primaryCta) + '</a>' +
+      '<a class="primary-btn" href="' + esc(v.url) + '" target="_blank">&#9654; ' + esc(v.primaryCta) + '</a>' +
       party.externalLinks.map(function(l) {
         return '<a class="secondary-link" href="' + esc(l.url) + '" target="_blank">' + esc(l.label) + '</a>';
       }).join('');
 
-    // Watch card
-    document.querySelector('.wc-title').textContent = s.label;
+    // Venue card
+    document.querySelector('.wc-title').textContent = v.label;
     var joinBtn = document.querySelector('.watch-join-btn');
-    joinBtn.href = s.url;
-    joinBtn.textContent = s.joinCta;
-    document.querySelector('.url-pill').innerHTML = esc(s.displayUrl[0]) + '<br>' + esc(s.displayUrl[1]);
-    document.querySelector('.wc-note-text').textContent = s.note;
+    joinBtn.href = v.url;
+    joinBtn.textContent = v.joinCta;
+    document.querySelector('.url-pill').innerHTML = esc(parsedUrl.hostname) + '<br>' + esc(parsedUrl.pathname);
+    document.querySelector('.wc-note-text').textContent = v.note;
 
     // Attendance options (paragraphs are trusted HTML)
     document.querySelector('.attendance-title').textContent = party.sections.attendance;

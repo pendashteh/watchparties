@@ -1,0 +1,17 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="48" height="48" rx="10" fill="#0d1f3c"/>
+  <rect x="1" y="1" width="46" height="46" rx="9" fill="none" stroke="rgba(201,162,39,0.28)" stroke-width="1.5"/>
+
+  <!-- Second play triangle — outline, peers from behind -->
+  <polygon
+    points="21,10 21,38 41,24"
+    fill="rgba(201,162,39,0.1)"
+    stroke="#c9a227"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+
+  <!-- First play triangle — solid, in front -->
+  <polygon points="7,12 7,36 27,24" fill="#c9a227"/>
+</svg>
