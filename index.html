@@ -235,27 +235,43 @@ body {
 }
 .share-btn:hover { border-color: var(--gold); color: var(--gold); }
 
-/* Schedule */
-.schedule-block { margin: 1rem 0 0.75rem; }
-.schedule-label {
+/* Scheduled at */
+.scheduled-at { margin: 1.25rem 0 0.5rem; }
+.sat-label {
   font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase;
-  font-weight: 600; color: var(--muted); margin-bottom: 0.55rem;
+  font-weight: 600; color: var(--muted); margin-bottom: 0.6rem;
 }
-.schedule-entries { display: flex; flex-direction: column; gap: 0.45rem; }
-.schedule-entry { display: flex; align-items: center; gap: 0.75rem; }
-.sched-type {
-  font-size: 10px; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; padding: 3px 8px; border-radius: 5px;
-  flex-shrink: 0; white-space: nowrap;
+.sat-entries { display: flex; flex-direction: column; gap: 0.4rem; }
+.sat-entry {
+  display: flex; align-items: center; gap: 0.7rem;
+  background: rgba(255,255,255,0.03);
+  border: 0.5px solid var(--border-dim);
+  border-radius: 10px; padding: 0.65rem 0.9rem;
 }
-.schedule-entry.live    .sched-type { background: rgba(192,41,42,0.18); color: #f87171; }
-.schedule-entry.replay  .sched-type { background: rgba(55,138,221,0.15);  color: #7ab8f0; }
-.schedule-entry.playback .sched-type { background: rgba(201,162,39,0.15); color: var(--gold-light); }
-.sched-when { font-size: 1rem; font-weight: 600; color: var(--white); }
-.sched-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.schedule-entry.live    .sched-dot { background: #f87171; animation: pulse 1.6s infinite; }
-.schedule-entry.replay  .sched-dot { background: #7ab8f0; }
-.schedule-entry.playback .sched-dot { background: var(--gold); }
+.sat-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.sat-entry.live    .sat-dot { background: #f87171; animation: pulse 1.6s infinite; }
+.sat-entry.replay  .sat-dot { background: #7ab8f0; }
+.sat-entry.playback .sat-dot { background: var(--gold); }
+.sat-type {
+  font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px;
+  text-transform: uppercase; padding: 2px 7px; border-radius: 4px; flex-shrink: 0;
+}
+.sat-entry.live     .sat-type { background: rgba(192,41,42,0.15);  color: #f87171; }
+.sat-entry.replay   .sat-type { background: rgba(55,138,221,0.12); color: #7ab8f0; }
+.sat-entry.playback .sat-type { background: rgba(201,162,39,0.12); color: var(--gold-light); }
+.sat-when { flex: 1; font-size: 0.95rem; font-weight: 600; color: var(--white); }
+.cal-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: transparent; border: 0.5px solid var(--border-dim);
+  border-radius: 7px; padding: 4px 9px;
+  color: var(--muted); font-size: 11.5px; font-weight: 500;
+  text-decoration: none; white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s;
+}
+.cal-btn:hover { border-color: var(--gold); color: var(--gold); }
+.sat-add-all { margin-top: 0.5rem; text-align: right; font-size: 12px; }
+.sat-add-all a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+.sat-add-all a:hover { color: var(--gold); }
 
 /* Share modal */
 .modal-overlay {
@@ -451,25 +467,6 @@ body {
 .members .option-tag { background: rgba(201,162,39,0.12); color: var(--gold-light); }
 .online  .option-tag { background: rgba(74,222,128,0.1); color: #4ade80; }
 
-/* About section */
-.evenue-section { padding: 1.5rem 0; }
-.evenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-.evenue-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem; }
-.evenue-text p:last-child { margin-bottom: 0; }
-.evenue-text strong { color: var(--white); font-weight: 500; }
-.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-.feature-list li {
-  display: flex; align-items: flex-start; gap: 0.7rem;
-  font-size: 0.875rem; color: var(--muted); line-height: 1.5;
-}
-.feature-list li strong { color: var(--white); font-weight: 500; }
-.check {
-  width: 18px; height: 18px; border-radius: 50%;
-  background: rgba(74,222,128,0.1);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; margin-top: 2px;
-}
-.check svg { width: 9px; height: 9px; }
 
 /* Footer */
 .footer {
@@ -584,8 +581,8 @@ body {
       <div>
         <div class="hero-eyebrow"></div>
         <h1 class="party-title"></h1>
-        <div id="times-list" class="times-list"></div>
         <div class="hero-cta-row"></div>
+        <div id="times-list"></div>
         <p class="party-sub"></p>
       </div>
 
@@ -606,16 +603,6 @@ body {
     <section class="options-section">
       <div class="section-head"><h2 class="attendance-title"></h2></div>
       <div class="options-grid"></div>
-    </section>
-
-    <hr class="section-rule">
-
-    <section class="evenue-section">
-      <div class="section-head"><h2 class="about-title"></h2></div>
-      <div class="evenue-grid">
-        <div class="evenue-text"></div>
-        <ul class="feature-list"></ul>
-      </div>
     </section>
 
     <hr class="section-rule">
@@ -711,18 +698,20 @@ body {
     // Times / schedule
     var tl = document.getElementById('times-list');
     if (party.times && party.times.length) {
-      tl.className = 'schedule-block';
-      tl.innerHTML =
-        '<div class="schedule-label">Schedule</div>' +
-        '<div class="schedule-entries">' +
-        party.times.map(function(t) {
-          return '<div class="schedule-entry ' + esc(t.type) + '">' +
-            '<span class="sched-dot"></span>' +
-            '<span class="sched-type">' + esc(t.type) + '</span>' +
-            '<span class="sched-when">' + esc(t.label) + '</span>' +
-            '</div>';
-        }).join('') +
-        '</div>';
+      tl.className = 'scheduled-at';
+      var entries = party.times.map(function(t) {
+        var href = makeICS([partyCalEvt(party, t)]);
+        return '<div class="sat-entry ' + esc(t.type) + '">' +
+          '<span class="sat-dot"></span>' +
+          '<span class="sat-type">' + esc(t.type) + '</span>' +
+          '<span class="sat-when">' + esc(t.label) + '</span>' +
+          '<a class="cal-btn" href="' + href + '" download="watch-party-' + esc(t.type) + '.ics">+ Calendar</a>' +
+          '</div>';
+      }).join('');
+      var addAll = party.times.length > 1
+        ? '<div class="sat-add-all"><a href="' + makeICS(party.times.map(function(t){ return partyCalEvt(party,t); })) + '" download="watch-party-all.ics">Add all to calendar &darr;</a></div>'
+        : '';
+      tl.innerHTML = '<div class="sat-label">Scheduled at</div><div class="sat-entries">' + entries + '</div>' + addAll;
       tl.style.display = '';
     } else {
       tl.style.display = 'none';
@@ -746,28 +735,15 @@ body {
     document.querySelector('.url-pill').innerHTML = esc(parsedUrl.hostname) + '<br>' + esc(parsedUrl.pathname);
     document.querySelector('.wc-note-text').textContent = v.note;
 
-    // Attendance options (paragraphs are trusted HTML)
+    // Attendance options
     document.querySelector('.attendance-title').textContent = party.sections.attendance;
     document.querySelector('.options-grid').innerHTML = party.attendance.map(function(a) {
       return '<div class="option-card ' + esc(a.variant) + '">' +
         '<div class="option-icon">' + a.icon + '</div>' +
         '<h3>' + esc(a.title) + '</h3>' +
-        a.paragraphs.map(function(p) { return '<p>' + p + '</p>'; }).join('') +
+        (a.paragraphs && a.paragraphs[0] ? '<p>' + a.paragraphs[0] + '</p>' : '') +
         '<span class="option-tag">' + esc(a.tag) + '</span>' +
         '</div>';
-    }).join('');
-
-    // About section (trusted HTML)
-    var ab = party.about;
-    document.querySelector('.about-title').textContent = ab.title;
-    document.querySelector('.evenue-text').innerHTML = ab.paragraphs.map(function(p) {
-      return '<p>' + p + '</p>';
-    }).join('');
-    document.querySelector('.feature-list').innerHTML = ab.features.map(function(f) {
-      return '<li>' +
-        '<span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
-        '<span>' + f.text + '</span>' +
-        '</li>';
     }).join('');
 
     // Footer
@@ -789,6 +765,41 @@ body {
       '<a class="sponsor-link" href="' + esc(sponsor.url) + '" target="_blank">' +
         entityLogoHtml(sponsor, { nameBelow: party.sponsorRole }) +
       '</a>' : '';
+  }
+
+  // --- calendar helpers ---
+
+  function toICSDate(iso) {
+    return new Date(iso).toISOString().replace(/[-:]/g,'').replace(/\.\d+Z$/,'Z');
+  }
+
+  function makeICS(evts) {
+    var lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Watch Parties//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
+    evts.forEach(function(ev) {
+      lines.push(
+        'BEGIN:VEVENT',
+        'UID:' + ev.uid + '@watch-parties',
+        'DTSTART:' + toICSDate(ev.start),
+        'DTEND:' + toICSDate(ev.end),
+        'SUMMARY:' + ev.summary,
+        'URL:' + ev.url,
+        'DESCRIPTION:' + ev.url,
+        'END:VEVENT'
+      );
+    });
+    lines.push('END:VCALENDAR');
+    return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(lines.join('\r\n'));
+  }
+
+  function partyCalEvt(party, t) {
+    var typeName = t.type.charAt(0).toUpperCase() + t.type.slice(1);
+    return {
+      uid: party.code + '-' + t.type,
+      start: t.start,
+      end: new Date(new Date(t.start).getTime() + 90 * 60000).toISOString(),
+      summary: party.title.join(' ') + ' @ ' + party.brand + ' — ' + typeName,
+      url: t.url || party.venue.url
+    };
   }
 
   // --- sharing ---
