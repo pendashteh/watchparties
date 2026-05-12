@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Watch Parties — inspire9</title>
-<meta property="og:title" content="Budget Watch Party @ inspire9">
-<meta property="og:description" content="Watch the Federal Budget live — in-person at inspire9 Kitchen or free online via eVenue.">
+<title>Watch Parties</title>
+<meta property="og:title" content="Watch Parties">
+<meta property="og:description" content="Enter your Watch Party code to join a live event.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -58,20 +58,19 @@ body {
   border-bottom: 0.5px solid var(--border);
   gap: 1rem; flex-wrap: wrap;
 }
-.inspire9-logo {
+.org-logo {
   display: flex; align-items: center; gap: 9px;
   text-decoration: none; flex-shrink: 0;
 }
-.i9-mark {
+.org-mark {
   width: 34px; height: 34px; border-radius: 8px;
-  background: var(--gold);
+  background: var(--gold); color: var(--navy);
   display: flex; align-items: center; justify-content: center;
   font-family: 'Playfair Display', serif;
   font-weight: 900; font-size: 16px;
-  color: var(--navy); letter-spacing: -1px; flex-shrink: 0;
+  letter-spacing: -1px; flex-shrink: 0;
 }
-.i9-wordmark { font-weight: 600; font-size: 17px; color: var(--white); letter-spacing: -0.3px; }
-.i9-wordmark span { color: var(--gold); }
+.org-wordmark { font-weight: 600; font-size: 17px; color: var(--white); letter-spacing: -0.3px; }
 
 .topbar-nav {
   display: flex; align-items: center; gap: 6px;
@@ -96,26 +95,7 @@ body {
    HOME VIEW
 ══════════════════════════════════════════════════════════ */
 
-.home-hero {
-  padding: 5rem 0 3rem;
-  max-width: 520px;
-}
-.home-eyebrow {
-  font-size: 11px; letter-spacing: 2px;
-  text-transform: uppercase; font-weight: 600;
-  color: var(--gold); margin-bottom: 1.25rem;
-  display: flex; align-items: center; gap: 8px;
-}
-.home-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--gold); }
-.home-hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.25rem; font-weight: 900;
-  line-height: 1.05; margin-bottom: 1rem;
-}
-.home-hero p {
-  font-size: 1rem; color: var(--muted);
-  line-height: 1.65; margin-bottom: 2.5rem;
-}
+#view-home .entry-card { margin-top: 1.5rem; }
 
 .entry-card {
   background: var(--navy-card);
@@ -245,14 +225,14 @@ body {
 
 /* Hero */
 .party-hero {
-  padding: 3rem 0 2.5rem;
+  padding: 1.5rem 0;
   display: grid;
   grid-template-columns: 1fr 400px;
-  gap: 3rem; align-items: center;
+  gap: 3rem; align-items: start;
 }
 .hero-eyebrow {
   display: flex; align-items: center; gap: 8px;
-  flex-wrap: wrap; margin-bottom: 1.1rem;
+  flex-wrap: wrap; margin-bottom: 0.75rem;
 }
 .badge {
   background: var(--red-au); color: var(--white);
@@ -269,13 +249,13 @@ body {
 .party-title {
   font-family: 'Playfair Display', serif;
   font-weight: 900; font-size: 3.5rem; line-height: 1.05;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .party-title .at { color: var(--gold); }
 .party-title .brand { color: var(--gold-light); display: block; }
 .party-sub {
   font-size: 1rem; color: var(--muted);
-  line-height: 1.65; margin-bottom: 2rem; max-width: 500px;
+  line-height: 1.65; margin-top: 1.25rem; max-width: 500px;
 }
 .party-sub strong { color: var(--white); font-weight: 500; }
 
@@ -351,7 +331,7 @@ body {
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
 /* Options */
-.options-section { padding: 3rem 0; }
+.options-section { padding: 1.5rem 0; }
 .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .option-card { border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem; }
 .option-card.members { background: rgba(201,162,39,0.05); border-color: rgba(201,162,39,0.35); }
@@ -379,8 +359,8 @@ body {
 .members .option-tag { background: rgba(201,162,39,0.12); color: var(--gold-light); }
 .online  .option-tag { background: rgba(74,222,128,0.1); color: #4ade80; }
 
-/* eVenue */
-.evenue-section { padding: 2.5rem 0; }
+/* About section */
+.evenue-section { padding: 1.5rem 0; }
 .evenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
 .evenue-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem; }
 .evenue-text p:last-child { margin-bottom: 0; }
@@ -412,14 +392,15 @@ body {
 .sponsors { display: flex; align-items: center; gap: 1.25rem; }
 .sponsor-label { font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .sponsor-rule { width: 0.5px; height: 26px; background: var(--border-dim); }
-.ew-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-.ew-mark {
+.sponsor-link { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.sponsor-mark {
   width: 30px; height: 30px; border-radius: 6px;
   border: 1.5px solid rgba(55,138,221,0.4);
   display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; color: #7ab8f0; letter-spacing: 0.5px;
 }
-.ew-wordmark { font-size: 12.5px; font-weight: 500; color: #7ab8f0; line-height: 1.2; }
-.ew-wordmark small { display: block; font-size: 10px; font-weight: 400; color: var(--muted); }
+.sponsor-name { font-size: 12.5px; font-weight: 500; color: #7ab8f0; line-height: 1.2; }
+.sponsor-name small { display: block; font-size: 10px; font-weight: 400; color: var(--muted); }
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 760px) {
@@ -431,10 +412,9 @@ body {
   .topbar-nav { display: none; }
 }
 @media (max-width: 480px) {
-  .home-hero { padding: 3rem 0 2rem; }
-  .home-hero h1 { font-size: 2.6rem; }
   .page-wrap { padding: 0 1rem 3rem; }
   .entry-card { padding: 1.5rem; }
+  #view-home .entry-card { margin-top: 1rem; }
 }
 </style>
 </head>
@@ -451,22 +431,11 @@ body {
 <div id="view-home">
   <div class="page-wrap">
     <nav class="topbar">
-      <a href="#" onclick="goHome(event)" class="inspire9-logo">
-        <div class="i9-mark">i9</div>
-        <span class="i9-wordmark">inspire<span>9</span></span>
+      <a href="#" onclick="goHome(event)" class="org-logo">
+        <div class="org-mark">WP</div>
+        <span class="org-wordmark">Watch Parties</span>
       </a>
-      <div class="topbar-nav">
-        <a href="https://inspire9.com" target="_blank">inspire9.com</a>
-        <div class="dot"></div>
-        <span>Richmond, Melbourne</span>
-      </div>
     </nav>
-
-    <div class="home-hero">
-      <div class="home-eyebrow">Watch Parties</div>
-      <h1>Watch<br>Parties</h1>
-      <p>An inspire9 initiative. Enter your Watch Party code to jump straight into a live event, or join us in person at the inspire9 Kitchen.</p>
-    </div>
 
     <div class="entry-card">
       <div class="entry-label">Enter your Watch Party code</div>
@@ -475,7 +444,7 @@ body {
           type="text"
           class="code-input"
           id="codeInput"
-          placeholder="e.g. budget-2026-inspire9"
+          placeholder="enter your code"
           autocomplete="off"
           autocapitalize="none"
           spellcheck="false"
@@ -495,200 +464,218 @@ body {
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     PARTY VIEW  (budget-2026-inspire9)
+     PARTY VIEW
 ════════════════════════════════════════════════════════ -->
 <div id="view-party">
 
-  <!-- Sticky mobile strip — shown only on small screens -->
   <div class="mobile-join-strip">
-    <div class="mjs-text">
-      &#9654; Budget Watch Party
-      <small>Tap to join the live eVenue — free</small>
-    </div>
-    <a class="mjs-btn" href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" target="_blank">
-      Join Live &rarr;
-    </a>
+    <div class="mjs-text"></div>
+    <a class="mjs-btn" href="" target="_blank">Join Live &rarr;</a>
   </div>
 
   <div class="page-wrap">
     <nav class="topbar">
-      <a href="https://inspire9.com" class="inspire9-logo" target="_blank">
-        <div class="i9-mark">i9</div>
-        <span class="i9-wordmark">inspire<span>9</span></span>
-      </a>
+      <a id="party-org-logo" class="org-logo" href="" target="_blank"></a>
       <div class="party-topbar-right">
         <button class="back-btn" onclick="goHome()">
           &larr; All Watch Parties
         </button>
-        <div class="topbar-nav">
-          <a href="https://inspire9.com" target="_blank">inspire9.com</a>
-          <div class="dot"></div>
-          <a href="https://budget.gov.au/" target="_blank">budget.gov.au</a>
-        </div>
+        <div class="topbar-nav"></div>
       </div>
     </nav>
 
-    <!-- Hero -->
     <section class="party-hero">
       <div>
-        <div class="hero-eyebrow">
-          <span class="badge">&#127462;&#127482; Federal Budget</span>
-          <span class="badge-outline">inspire9 Initiative</span>
-        </div>
-        <h1 class="party-title">
-          Budget<br>Watch Party
-          <span class="at"> @ </span><span class="brand">inspire9</span>
-        </h1>
-        <p class="party-sub">
-          Watch the <strong>Federal Budget announcement live</strong> with the inspire9 community —
-          gather in the Kitchen or join from anywhere via eVenue.
-          Chat with everyone in real time, whether you're in the room or online.
-        </p>
-        <div class="hero-cta-row">
-          <a class="primary-btn" href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" target="_blank">
-            &#9654; Enter eVenue
-          </a>
-          <a class="secondary-link" href="https://budget.gov.au/" target="_blank">
-            budget.gov.au &#8599;
-          </a>
-        </div>
+        <div class="hero-eyebrow"></div>
+        <h1 class="party-title"></h1>
+        <div class="hero-cta-row"></div>
+        <p class="party-sub"></p>
       </div>
 
       <div class="watch-card">
         <div class="wc-eyebrow">&#9654; Live Watch Link</div>
-        <div class="wc-title">eVenue &mdash; Budget 2026 Watch Party</div>
-        <a class="watch-join-btn" href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" target="_blank">
-          Join on eVenue &rarr;
-        </a>
-        <div class="url-pill">evenue.electronworkshop.com.au<br>/rooms/vpu-ci4-ut4-14k/join</div>
+        <div class="wc-title"></div>
+        <a class="watch-join-btn" href="" target="_blank"></a>
+        <div class="url-pill"></div>
         <div class="wc-note">
           <span class="live-dot"></span>
-          Free for all online attendees &middot; No account required
+          <span class="wc-note-text"></span>
         </div>
       </div>
     </section>
 
     <hr class="section-rule">
 
-    <!-- How to attend -->
     <section class="options-section">
-      <div class="section-head"><h2>How to attend</h2></div>
-      <div class="options-grid">
-        <div class="option-card members">
-          <div class="option-icon">&#x1F373;</div>
-          <h3>inspire9 Kitchen</h3>
-          <p>Watch live at the <strong>inspire9 Kitchen</strong>, Level 1, 41&ndash;43 Stewart Street, Richmond. Gather with fellow members and react together in person.</p>
-          <p><strong>Exclusive to inspire9 members.</strong> Check your inbox or Slack for details.</p>
-          <span class="option-tag">Members Only</span>
-        </div>
-        <div class="option-card online">
-          <div class="option-icon">&#x1F4BB;</div>
-          <h3>Online via eVenue</h3>
-          <p>Join from anywhere &mdash; completely free. <strong>eVenue</strong> by Electron Workshop connects online and in-person attendees in one live chat while watching together.</p>
-          <p>No account, no cost. Just click the link and you&rsquo;re in.</p>
-          <span class="option-tag">&#x2713; Free for Anyone</span>
-        </div>
-      </div>
+      <div class="section-head"><h2 class="attendance-title"></h2></div>
+      <div class="options-grid"></div>
     </section>
 
     <hr class="section-rule">
 
-    <!-- eVenue -->
     <section class="evenue-section">
-      <div class="section-head"><h2>About eVenue</h2></div>
+      <div class="section-head"><h2 class="about-title"></h2></div>
       <div class="evenue-grid">
-        <div class="evenue-text">
-          <p><strong>eVenue</strong> is a live event platform that bridges in-room and online audiences. Everyone watches the same stream while chatting together &mdash; no divide between who&rsquo;s there and who&rsquo;s remote.</p>
-          <p>This eVenue is sponsored by <strong>Electron Workshop</strong>, Melbourne&rsquo;s community-driven digital infrastructure provider.</p>
-        </div>
-        <ul class="feature-list">
-          <li>
-            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><strong>Shared live stream</strong> &mdash; everyone watches the same Budget broadcast</span>
-          </li>
-          <li>
-            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><strong>Unified live chat</strong> &mdash; in-person and online in one conversation</span>
-          </li>
-          <li>
-            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><strong>No login needed</strong> &mdash; pick a name and you&rsquo;re live instantly</span>
-          </li>
-          <li>
-            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span><strong>Free for all</strong> &mdash; open to anyone online, anywhere in Australia</span>
-          </li>
-        </ul>
+        <div class="evenue-text"></div>
+        <ul class="feature-list"></ul>
       </div>
     </section>
 
     <hr class="section-rule">
 
     <footer class="footer">
-      <div class="footer-left">
-        An <strong>inspire9</strong> community initiative &middot;
-        <a href="https://inspire9.com" target="_blank">inspire9.com</a>
-        &middot; Level 1, 41&ndash;43 Stewart St, Richmond VIC 3121<br>
-        Budget info: <a href="https://budget.gov.au/" target="_blank">budget.gov.au</a>
-        &middot; Code: <code style="font-size:11px;color:var(--muted);background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:4px;">budget-2026-inspire9</code>
-      </div>
-      <div class="sponsors">
-        <span class="sponsor-label">eVenue sponsored by</span>
-        <div class="sponsor-rule"></div>
-        <a class="ew-logo" href="https://electronworkshop.com.au" target="_blank">
-          <div class="ew-mark">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
-              <circle cx="8.5" cy="8.5" r="2.5" stroke="#7ab8f0" stroke-width="1.3"/>
-              <ellipse cx="8.5" cy="8.5" rx="7.5" ry="3.5" stroke="#7ab8f0" stroke-width="0.9"/>
-              <ellipse cx="8.5" cy="8.5" rx="7.5" ry="3.5" transform="rotate(60 8.5 8.5)" stroke="#7ab8f0" stroke-width="0.9" opacity="0.5"/>
-              <ellipse cx="8.5" cy="8.5" rx="7.5" ry="3.5" transform="rotate(-60 8.5 8.5)" stroke="#7ab8f0" stroke-width="0.9" opacity="0.5"/>
-            </svg>
-          </div>
-          <div class="ew-wordmark">
-            Electron Workshop
-            <small>eVenue sponsor</small>
-          </div>
-        </a>
-      </div>
+      <div class="footer-left"></div>
+      <div id="party-sponsor" class="sponsors"></div>
     </footer>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════
-     ROUTING
-════════════════════════════════════════════════════════ -->
 <script>
-  var VALID = { 'budget-2026-inspire9': true };
+  var VALID = {};
+  var ENTITIES = {};
+
+  // --- helpers ---
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function entityLogoHtml(e, opts) {
+    opts = opts || {};
+    if (e.logo) {
+      var st = 'height:' + (e.logoHeight || 28) + 'px;max-width:140px;object-fit:contain;display:block;';
+      if (e.logoBg) st += 'background:' + e.logoBg + ';padding:' + (e.logoPadding || '3px 8px') + ';border-radius:6px;';
+      if (opts.filter) st += 'filter:' + opts.filter + ';';
+      return '<img src="' + esc(e.logo) + '" alt="' + esc(e.name) + '" style="' + st + '">';
+    }
+    var bg = e.markBg ? 'background:' + e.markBg + ';' : '';
+    var col = e.markColor ? 'color:' + e.markColor + ';' : '';
+    return '<div class="org-mark" style="' + bg + col + '">' + esc(e.mark || '') + '</div>' +
+      '<span class="org-wordmark">' + esc(e.name) + '</span>';
+  }
+
+  // --- rendering ---
+
+  function renderPartyView(party) {
+    var s = party.stream;
+    var organizer = ENTITIES[party.organizer] || {};
+    var sponsor   = ENTITIES[party.sponsor]   || null;
+    document.title = party.pageTitle;
+
+    // Organizer logo (topbar)
+    var logoEl = document.getElementById('party-org-logo');
+    logoEl.href = organizer.url || '#';
+    logoEl.innerHTML = entityLogoHtml(organizer);
+
+    // Mobile join strip
+    document.querySelector('.mjs-text').innerHTML =
+      '&#9654; ' + esc(party.title.join(' ')) + '<small>' + esc(s.mobileSub) + '</small>';
+    document.querySelector('.mjs-btn').href = s.url;
+
+    // Topbar nav
+    document.querySelector('#view-party .topbar-nav').innerHTML =
+      party.topbarLinks.map(function(l, i) {
+        return (i > 0 ? '<div class="dot"></div>' : '') +
+          '<a href="' + esc(l.url) + '" target="_blank">' + esc(l.label) + '</a>';
+      }).join('');
+
+    // Badges
+    document.querySelector('.hero-eyebrow').innerHTML =
+      party.badges.map(function(b) {
+        var cls = b.style === 'outline' ? 'badge-outline' : 'badge';
+        return '<span class="' + cls + '">' + esc(b.text) + '</span>';
+      }).join('');
+
+    // Title + brand
+    document.querySelector('.party-title').innerHTML =
+      party.title.join('<br>') +
+      '<span class="at"> @ </span><span class="brand">' + esc(party.brand) + '</span>';
+
+    // Subtitle (trusted HTML)
+    document.querySelector('.party-sub').innerHTML = party.subtitle;
+
+    // Hero CTA row
+    document.querySelector('.hero-cta-row').innerHTML =
+      '<a class="primary-btn" href="' + esc(s.url) + '" target="_blank">&#9654; ' + esc(s.primaryCta) + '</a>' +
+      party.externalLinks.map(function(l) {
+        return '<a class="secondary-link" href="' + esc(l.url) + '" target="_blank">' + esc(l.label) + '</a>';
+      }).join('');
+
+    // Watch card
+    document.querySelector('.wc-title').textContent = s.label;
+    var joinBtn = document.querySelector('.watch-join-btn');
+    joinBtn.href = s.url;
+    joinBtn.textContent = s.joinCta;
+    document.querySelector('.url-pill').innerHTML = esc(s.displayUrl[0]) + '<br>' + esc(s.displayUrl[1]);
+    document.querySelector('.wc-note-text').textContent = s.note;
+
+    // Attendance options (paragraphs are trusted HTML)
+    document.querySelector('.attendance-title').textContent = party.sections.attendance;
+    document.querySelector('.options-grid').innerHTML = party.attendance.map(function(a) {
+      return '<div class="option-card ' + esc(a.variant) + '">' +
+        '<div class="option-icon">' + a.icon + '</div>' +
+        '<h3>' + esc(a.title) + '</h3>' +
+        a.paragraphs.map(function(p) { return '<p>' + p + '</p>'; }).join('') +
+        '<span class="option-tag">' + esc(a.tag) + '</span>' +
+        '</div>';
+    }).join('');
+
+    // About section (trusted HTML)
+    var ab = party.about;
+    document.querySelector('.about-title').textContent = ab.title;
+    document.querySelector('.evenue-text').innerHTML = ab.paragraphs.map(function(p) {
+      return '<p>' + p + '</p>';
+    }).join('');
+    document.querySelector('.feature-list').innerHTML = ab.features.map(function(f) {
+      return '<li>' +
+        '<span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+        '<span>' + f.text + '</span>' +
+        '</li>';
+    }).join('');
+
+    // Footer
+    var f = party.footer;
+    document.querySelector('#view-party .footer-left').innerHTML =
+      'An <strong>' + esc(f.org) + '</strong> community initiative &middot; ' +
+      '<a href="' + esc(f.orgUrl) + '" target="_blank">' + esc(f.orgUrl.replace('https://', '')) + '</a>' +
+      ' &middot; ' + esc(f.address) + '<br>' +
+      f.extraLinks.map(function(l) {
+        return '<a href="' + esc(l.url) + '" target="_blank">' + esc(l.label) + '</a>';
+      }).join(' &middot; ') +
+      ' &middot; Code: <code style="font-size:11px;color:var(--muted);background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:4px;">' +
+      esc(party.code) + '</code>';
+
+    // Sponsor (entity logo in footer)
+    document.getElementById('party-sponsor').innerHTML = sponsor ?
+      '<span class="sponsor-label">' + esc(party.sponsorLabel || 'Sponsored by') + '</span>' +
+      '<div class="sponsor-rule"></div>' +
+      '<a class="sponsor-link" href="' + esc(sponsor.url) + '" target="_blank">' +
+        entityLogoHtml(sponsor, { nameBelow: party.sponsorRole }) +
+      '</a>' : '';
+  }
+
+  // --- routing ---
 
   function showView(v) {
     document.getElementById('view-home').style.display  = v === 'home'  ? 'block' : 'none';
     document.getElementById('view-party').style.display = v === 'party' ? 'block' : 'none';
-    document.title = v === 'party' ? 'Budget Watch Party @ inspire9' : 'Watch Parties — inspire9';
+    if (v === 'home') document.title = 'Watch Parties';
     window.scrollTo(0, 0);
   }
 
   function goHome(e) {
     if (e && e.preventDefault) e.preventDefault();
-    history.pushState({ view: 'home' }, '', getBase());
+    history.pushState({ view: 'home' }, '', window.location.pathname);
     showView('home');
     document.getElementById('codeInput').value = '';
     clearError();
   }
 
-  function getBase() {
-    var p = window.location.pathname;
-    // Strip trailing known code segment
-    for (var code in VALID) {
-      if (p.endsWith('/' + code)) return p.slice(0, -code.length - 1) || '/';
-    }
-    return p.replace(/\/$/, '') || '/';
-  }
-
   function goParty(code, push) {
-    if (push) {
-      var base = getBase().replace(/\/$/, '');
-      history.pushState({ view: 'party', code: code }, '', base + '/' + code);
-    }
+    var party = VALID[code];
+    if (!party) return;
+    renderPartyView(party);
+    if (push) history.pushState({ view: 'party', code: code }, '', '?wp=' + encodeURIComponent(code));
     showView('party');
   }
 
@@ -707,26 +694,36 @@ body {
       var inp = document.getElementById('codeInput');
       inp.classList.add('error');
       document.getElementById('errorMsg').classList.add('visible');
-      setTimeout(function(){ inp.classList.remove('error'); }, 400);
+      setTimeout(function() { inp.classList.remove('error'); }, 400);
     }
   }
 
-  document.getElementById('codeInput').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') handleJoin();
-    else clearError();
-  });
+  function init(site, parties) {
+    ENTITIES = site.entities || {};
+    parties.parties.forEach(function(p) { VALID[p.code] = p; });
 
-  window.addEventListener('popstate', function(e) {
-    if (e.state && e.state.view === 'party') showView('party');
-    else showView('home');
-  });
+    document.getElementById('codeInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleJoin();
+      else clearError();
+    });
 
-  // Init: check URL on first load
-  (function() {
-    var seg = window.location.pathname.split('/').filter(Boolean).pop() || '';
-    if (VALID[seg]) goParty(seg, false);
+    window.addEventListener('popstate', function(e) {
+      var code = e.state && e.state.code;
+      if (code && VALID[code]) { renderPartyView(VALID[code]); showView('party'); }
+      else showView('home');
+    });
+
+    var wp = new URLSearchParams(window.location.search).get('wp') || '';
+    if (VALID[wp]) goParty(wp, false);
     else showView('home');
-  })();
+  }
+
+  Promise.all([
+    fetch('site.json').then(function(r) { return r.json(); }),
+    fetch('parties.json').then(function(r) { return r.json(); })
+  ]).then(function(res) {
+    init(res[0], res[1]);
+  }).catch(function() { showView('home'); });
 </script>
 </body>
 </html>
