@@ -3,651 +3,730 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Budget Watch Party @ inspire9</title>
+<title>Watch Parties — inspire9</title>
 <meta property="og:title" content="Budget Watch Party @ inspire9">
-<meta property="og:description" content="Watch the Federal Budget announcement live — in-person at inspire9 Kitchen or online via eVenue. Free for all online attendees.">
-<meta property="og:url" content="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join">
+<meta property="og:description" content="Watch the Federal Budget live — in-person at inspire9 Kitchen or free online via eVenue.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --navy: #0d1f3c;
-    --navy-mid: #132847;
-    --gold: #c9a227;
-    --gold-light: #e8be4a;
-    --cream: #f7f3eb;
-    --red-au: #c0292a;
-    --white: #ffffff;
-    --muted: #8a9ab5;
-    --border: rgba(201,162,39,0.25);
-  }
+:root {
+  --navy:       #0d1f3c;
+  --navy-mid:   #132847;
+  --navy-card:  #162d54;
+  --gold:       #c9a227;
+  --gold-light: #e8be4a;
+  --red-au:     #c0292a;
+  --white:      #ffffff;
+  --muted:      #8a9ab5;
+  --muted-dim:  #536480;
+  --border:     rgba(201,162,39,0.22);
+  --border-dim: rgba(255,255,255,0.08);
+}
 
-  html, body {
-    min-height: 100%;
-    background: var(--navy);
-    font-family: 'DM Sans', sans-serif;
-    color: var(--white);
-  }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background: var(--navy);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/* ── Shared ─────────────────────────────────────────────── */
 
-  /* ── BANNER STRIP ── */
-  .aus-strip {
-    width: 100%;
-    display: flex;
-    height: 6px;
-  }
-  .aus-strip span {
-    flex: 1;
-  }
-  .aus-strip .s1 { background: var(--red-au); }
-  .aus-strip .s2 { background: var(--gold); }
-  .aus-strip .s3 { background: var(--white); }
-  .aus-strip .s4 { background: var(--gold); }
-  .aus-strip .s5 { background: var(--red-au); }
+.aus-strip { width: 100%; height: 5px; display: flex; }
+.aus-strip span { flex: 1; }
+.s1 { background: var(--red-au); }
+.s2 { background: var(--gold); }
+.s3 { background: var(--white); }
+.s4 { background: var(--gold); }
+.s5 { background: var(--red-au); }
 
-  /* ── HERO WRAPPER ── */
-  .page {
-    width: 100%;
-    max-width: 1100px;
-    padding: 0 2rem 4rem;
-  }
+.page-wrap {
+  width: 100%; max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
 
-  /* ── TOP BAR ── */
-  .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.75rem 0 1.5rem;
-    border-bottom: 0.5px solid var(--border);
-  }
+.topbar {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0 1.25rem;
+  border-bottom: 0.5px solid var(--border);
+  gap: 1rem; flex-wrap: wrap;
+}
+.inspire9-logo {
+  display: flex; align-items: center; gap: 9px;
+  text-decoration: none; flex-shrink: 0;
+}
+.i9-mark {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 16px;
+  color: var(--navy); letter-spacing: -1px; flex-shrink: 0;
+}
+.i9-wordmark { font-weight: 600; font-size: 17px; color: var(--white); letter-spacing: -0.3px; }
+.i9-wordmark span { color: var(--gold); }
 
-  .inspire9-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-  .i9-mark {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 18px;
-    color: var(--navy);
-    letter-spacing: -1px;
-  }
-  .i9-wordmark {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--white);
-    letter-spacing: -0.3px;
-  }
-  .i9-wordmark span {
-    color: var(--gold);
-  }
+.topbar-nav {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--muted); flex-wrap: wrap;
+}
+.topbar-nav a { color: var(--muted); text-decoration: none; }
+.topbar-nav a:hover { color: var(--gold); }
+.dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-dim); }
 
-  .topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .topbar-right a {
-    color: var(--muted);
-    text-decoration: none;
-  }
-  .topbar-right a:hover { color: var(--gold); }
-  .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
+.section-rule { border: none; border-top: 0.5px solid var(--border); }
+.section-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.section-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; white-space: nowrap;
+}
+.section-head::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
 
-  /* ── HERO ── */
-  .hero {
-    padding: 4rem 0 3rem;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 3rem;
-    align-items: center;
-  }
+/* ── View toggling ──────────────────────────────────────── */
+#view-home, #view-party { display: none; }
 
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1.25rem;
-  }
-  .badge {
-    background: var(--red-au);
-    color: var(--white);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-  }
-  .badge-outline {
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-  }
+/* ═══════════════════════════════════════════════════════════
+   HOME VIEW
+══════════════════════════════════════════════════════════ */
 
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 3.75rem;
-    line-height: 1.05;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-  }
-  .hero-title .at { color: var(--gold); }
-  .hero-title .brand {
-    color: var(--gold-light);
-    display: block;
-  }
+.home-hero {
+  padding: 5rem 0 3rem;
+  max-width: 520px;
+}
+.home-eyebrow {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--gold); margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.home-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--gold); }
+.home-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.25rem; font-weight: 900;
+  line-height: 1.05; margin-bottom: 1rem;
+}
+.home-hero p {
+  font-size: 1rem; color: var(--muted);
+  line-height: 1.65; margin-bottom: 2.5rem;
+}
 
-  .hero-sub {
-    font-size: 1.125rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin: 1.25rem 0 2rem;
-    max-width: 520px;
-  }
-  .hero-sub strong { color: var(--white); font-weight: 500; }
+.entry-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem;
+  max-width: 480px;
+}
+.entry-label {
+  font-size: 12px; letter-spacing: 1.2px;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--muted); margin-bottom: 0.75rem;
+}
+.input-row { display: flex; margin-bottom: 0.5rem; }
+.code-input {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem; font-family: 'DM Sans', sans-serif;
+  color: var(--white); outline: none;
+  transition: border-color 0.15s, background 0.15s;
+  width: 100%;
+}
+.code-input::placeholder { color: var(--muted-dim); }
+.code-input:focus {
+  border-color: rgba(201,162,39,0.5);
+  background: rgba(255,255,255,0.09);
+}
+.code-input.error {
+  border-color: rgba(192,41,42,0.7) !important;
+  animation: shake 0.35s ease;
+}
+@keyframes shake {
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-6px)}
+  40%{transform:translateX(6px)}
+  60%{transform:translateX(-4px)}
+  80%{transform:translateX(4px)}
+}
+.join-code-btn {
+  background: var(--gold); color: var(--navy);
+  border: none; cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  padding: 0.8rem 1.25rem;
+  font-weight: 700; font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.15s; white-space: nowrap;
+}
+.join-code-btn:hover { background: var(--gold-light); }
+.join-code-btn:active { transform: scale(0.97); }
 
-  /* ── WATCH CARD ── */
-  .watch-card {
-    background: linear-gradient(145deg, #162d54, #0f2240);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .watch-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-  }
+.error-msg {
+  font-size: 12.5px; color: #f87171;
+  min-height: 20px; margin-bottom: 0.35rem;
+  opacity: 0; transition: opacity 0.2s;
+}
+.error-msg.visible { opacity: 1; }
 
-  .wc-label {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-  .wc-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 1.25rem;
-    line-height: 1.3;
-  }
+.divider-or {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin: 1.25rem 0;
+  font-size: 12px; color: var(--muted-dim);
+}
+.divider-or::before, .divider-or::after {
+  content: ''; flex: 1; height: 0.5px;
+  background: var(--border-dim);
+}
 
-  .join-btn {
-    display: block;
-    width: 100%;
-    background: var(--gold);
-    color: var(--navy);
-    text-align: center;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    letter-spacing: 0.2px;
-    transition: background 0.15s, transform 0.1s;
-    margin-bottom: 1rem;
-  }
-  .join-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+.create-btn {
+  width: 100%; background: transparent;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 10px; padding: 0.8rem 1.5rem;
+  color: var(--muted-dim);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; font-weight: 500;
+  cursor: not-allowed;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.coming-tag {
+  font-size: 10px; letter-spacing: 1px;
+  text-transform: uppercase; font-weight: 600;
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px; border-radius: 4px;
+  color: var(--muted-dim);
+}
 
-  .url-pill {
-    background: rgba(255,255,255,0.06);
-    border: 0.5px solid rgba(255,255,255,0.12);
-    border-radius: 8px;
-    padding: 0.6rem 1rem;
-    font-size: 12px;
-    color: var(--muted);
-    word-break: break-all;
-    font-family: 'DM Mono', 'Courier New', monospace;
-    line-height: 1.4;
-  }
+/* ═══════════════════════════════════════════════════════════
+   PARTY VIEW
+══════════════════════════════════════════════════════════ */
 
-  .wc-note {
-    font-size: 12px;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-  .live-dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: #4ade80;
-    animation: pulse 1.5s infinite;
-    flex-shrink: 0;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
+/* Sticky mobile join strip */
+.mobile-join-strip {
+  display: none;
+  position: sticky; top: 0; z-index: 100;
+  background: var(--gold);
+  padding: 0.8rem 1.25rem;
+  align-items: center; justify-content: space-between;
+  gap: 0.75rem; box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.mjs-text { font-size: 0.85rem; font-weight: 600; color: var(--navy); line-height: 1.25; }
+.mjs-text small { display: block; font-weight: 400; font-size: 0.72rem; opacity: 0.65; }
+.mjs-btn {
+  background: var(--navy); color: var(--gold);
+  text-decoration: none;
+  padding: 0.55rem 1.1rem; border-radius: 8px;
+  font-weight: 700; font-size: 0.88rem;
+  white-space: nowrap; flex-shrink: 0;
+}
 
-  /* ── DIVIDER ── */
-  .section-rule {
-    border: none;
-    border-top: 0.5px solid var(--border);
-    margin: 0;
-  }
+@media (max-width: 640px) { .mobile-join-strip { display: flex; } }
 
-  /* ── OPTIONS ── */
-  .options {
-    padding: 3rem 0;
-  }
-  .options-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 1.75rem;
-  }
+.party-topbar-right {
+  display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+}
+.back-btn {
+  display: flex; align-items: center; gap: 5px;
+  background: transparent;
+  border: 0.5px solid var(--border-dim);
+  border-radius: 8px; padding: 5px 10px;
+  color: var(--muted); font-size: 13px;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.15s, color 0.15s;
+}
+.back-btn:hover { border-color: var(--border); color: var(--white); }
 
-  .option-card {
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.75rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .option-card.members {
-    background: rgba(201,162,39,0.06);
-    border-color: rgba(201,162,39,0.4);
-  }
-  .option-card.online {
-    background: rgba(26,93,178,0.08);
-    border-color: rgba(55,138,221,0.3);
-  }
+/* Hero */
+.party-hero {
+  padding: 3rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem; align-items: center;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap; margin-bottom: 1.1rem;
+}
+.badge {
+  background: var(--red-au); color: var(--white);
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 4px;
+}
+.badge-outline {
+  background: transparent; border: 1px solid var(--gold); color: var(--gold);
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 4px;
+}
+.party-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 3.5rem; line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.party-title .at { color: var(--gold); }
+.party-title .brand { color: var(--gold-light); display: block; }
+.party-sub {
+  font-size: 1rem; color: var(--muted);
+  line-height: 1.65; margin-bottom: 2rem; max-width: 500px;
+}
+.party-sub strong { color: var(--white); font-weight: 500; }
 
-  .option-icon {
-    width: 44px; height: 44px;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 22px;
-  }
-  .members .option-icon { background: rgba(201,162,39,0.15); }
-  .online .option-icon  { background: rgba(55,138,221,0.15); }
+.hero-cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.primary-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold); color: var(--navy);
+  text-decoration: none;
+  padding: 0.85rem 1.75rem; border-radius: 10px;
+  font-weight: 700; font-size: 0.95rem;
+  transition: background 0.15s, transform 0.1s;
+}
+.primary-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+.secondary-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 0.85rem 1.4rem;
+  border: 1px solid var(--border); border-radius: 10px;
+  color: var(--gold); font-weight: 600; font-size: 0.9rem;
+  text-decoration: none; transition: border-color 0.15s;
+}
+.secondary-link:hover { border-color: var(--gold); }
 
-  .option-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .option-card p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .option-card p strong { color: var(--white); font-weight: 500; }
+/* Watch card */
+.watch-card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.75rem;
+  position: relative; overflow: hidden;
+}
+.watch-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+.wc-eyebrow {
+  font-size: 10.5px; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--gold); margin-bottom: 0.6rem;
+}
+.wc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 700;
+  margin-bottom: 1.25rem; line-height: 1.3;
+}
+.watch-join-btn {
+  display: block; width: 100%;
+  background: var(--gold); color: var(--navy);
+  text-align: center; text-decoration: none;
+  padding: 0.95rem 1.5rem; border-radius: 10px;
+  font-weight: 700; font-size: 1rem;
+  transition: background 0.15s, transform 0.1s;
+  margin-bottom: 0.9rem;
+}
+.watch-join-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+.url-pill {
+  background: rgba(255,255,255,0.05);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 0.55rem 0.9rem;
+  font-size: 11.5px; color: var(--muted);
+  word-break: break-all;
+  font-family: 'Courier New', monospace; line-height: 1.45;
+}
+.wc-note {
+  margin-top: 0.7rem; font-size: 12px; color: var(--muted);
+  text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #4ade80; flex-shrink: 0;
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
-  .option-tag {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 4px;
-  }
-  .members .option-tag {
-    background: rgba(201,162,39,0.15);
-    color: var(--gold-light);
-  }
-  .online .option-tag {
-    background: rgba(74,222,128,0.12);
-    color: #4ade80;
-  }
+/* Options */
+.options-section { padding: 3rem 0; }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.option-card { border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem; }
+.option-card.members { background: rgba(201,162,39,0.05); border-color: rgba(201,162,39,0.35); }
+.option-card.online  { background: rgba(26,93,178,0.07); border-color: rgba(55,138,221,0.28); }
+.option-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 0.9rem;
+}
+.members .option-icon { background: rgba(201,162,39,0.12); }
+.online  .option-icon { background: rgba(55,138,221,0.12); }
+.option-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;
+}
+.option-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+.option-card p + p { margin-top: 0.6rem; }
+.option-card p strong { color: var(--white); font-weight: 500; }
+.option-tag {
+  display: inline-block; margin-top: 1rem;
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+}
+.members .option-tag { background: rgba(201,162,39,0.12); color: var(--gold-light); }
+.online  .option-tag { background: rgba(74,222,128,0.1); color: #4ade80; }
 
-  /* ── SECTION HEADING ── */
-  .section-head {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .section-head h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-  }
-  .section-head::after {
-    content: '';
-    flex: 1;
-    height: 0.5px;
-    background: var(--border);
-  }
+/* eVenue */
+.evenue-section { padding: 2.5rem 0; }
+.evenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.evenue-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem; }
+.evenue-text p:last-child { margin-bottom: 0; }
+.evenue-text strong { color: var(--white); font-weight: 500; }
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+.feature-list li {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  font-size: 0.875rem; color: var(--muted); line-height: 1.5;
+}
+.feature-list li strong { color: var(--white); font-weight: 500; }
+.check {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(74,222,128,0.1);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.check svg { width: 9px; height: 9px; }
 
-  /* ── EVENUE INFO ── */
-  .evenue-section {
-    padding: 3rem 0 2.5rem;
-  }
-  .evenue-inner {
-    margin-top: 1.75rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  .evenue-text p {
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 0.75rem;
-  }
-  .evenue-text p:last-child { margin-bottom: 0; }
-  .evenue-text strong { color: var(--white); font-weight: 500; }
+/* Footer */
+.footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2.25rem 0 1.5rem;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+}
+.footer-left { font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+.footer-left a { color: var(--gold); text-decoration: none; }
+.footer-left a:hover { text-decoration: underline; }
+.sponsors { display: flex; align-items: center; gap: 1.25rem; }
+.sponsor-label { font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.sponsor-rule { width: 0.5px; height: 26px; background: var(--border-dim); }
+.ew-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.ew-mark {
+  width: 30px; height: 30px; border-radius: 6px;
+  border: 1.5px solid rgba(55,138,221,0.4);
+  display: flex; align-items: center; justify-content: center;
+}
+.ew-wordmark { font-size: 12.5px; font-weight: 500; color: #7ab8f0; line-height: 1.2; }
+.ew-wordmark small { display: block; font-size: 10px; font-weight: 400; color: var(--muted); }
 
-  .feature-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .feature-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-  .feature-list li strong { color: var(--white); font-weight: 500; }
-  .check {
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    background: rgba(74,222,128,0.12);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .check svg { width: 10px; height: 10px; }
-
-  /* ── FOOTER / SPONSORS ── */
-  .footer {
-    border-top: 0.5px solid var(--border);
-    padding: 2.5rem 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .footer-left {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .footer-left a { color: var(--gold); text-decoration: none; }
-  .footer-left a:hover { text-decoration: underline; }
-
-  .sponsors {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .sponsor-label {
-    font-size: 11px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
-  }
-  .sponsor-divider {
-    width: 0.5px;
-    height: 28px;
-    background: var(--border);
-  }
-
-  /* Electron Workshop logo text */
-  .ew-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-  }
-  .ew-mark {
-    width: 32px; height: 32px;
-    border-radius: 6px;
-    border: 1.5px solid rgba(55,138,221,0.5);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .ew-wordmark {
-    font-size: 13px;
-    font-weight: 500;
-    color: #7ab8f0;
-    line-height: 1.2;
-  }
-  .ew-wordmark small {
-    display: block;
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-title { font-size: 2.6rem; }
-    .options-grid { grid-template-columns: 1fr; }
-    .evenue-inner { grid-template-columns: 1fr; }
-    .topbar { flex-direction: column; gap: 1rem; align-items: flex-start; }
-    .footer { flex-direction: column; gap: 1.5rem; }
-  }
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .party-hero { grid-template-columns: 1fr; gap: 2rem; }
+  .party-title { font-size: 2.6rem; }
+  .options-grid { grid-template-columns: 1fr; }
+  .evenue-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .topbar-nav { display: none; }
+}
+@media (max-width: 480px) {
+  .home-hero { padding: 3rem 0 2rem; }
+  .home-hero h1 { font-size: 2.6rem; }
+  .page-wrap { padding: 0 1rem 3rem; }
+  .entry-card { padding: 1.5rem; }
+}
 </style>
 </head>
 <body>
 
 <div class="aus-strip">
-  <span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span>
+  <span class="s1"></span><span class="s2"></span><span class="s3"></span>
+  <span class="s4"></span><span class="s5"></span>
 </div>
 
-<div class="page">
+<!-- ══════════════════════════════════════════════════════
+     HOME VIEW
+════════════════════════════════════════════════════════ -->
+<div id="view-home">
+  <div class="page-wrap">
+    <nav class="topbar">
+      <a href="#" onclick="goHome(event)" class="inspire9-logo">
+        <div class="i9-mark">i9</div>
+        <span class="i9-wordmark">inspire<span>9</span></span>
+      </a>
+      <div class="topbar-nav">
+        <a href="https://inspire9.com" target="_blank">inspire9.com</a>
+        <div class="dot"></div>
+        <span>Richmond, Melbourne</span>
+      </div>
+    </nav>
 
-  <!-- TOP BAR -->
-  <nav class="topbar">
-    <a href="https://inspire9.com" class="inspire9-logo" target="_blank">
-      <div class="i9-mark">i9</div>
-      <span class="i9-wordmark">inspire<span>9</span></span>
+    <div class="home-hero">
+      <div class="home-eyebrow">Watch Parties</div>
+      <h1>Watch<br>Parties</h1>
+      <p>An inspire9 initiative. Enter your Watch Party code to jump straight into a live event, or join us in person at the inspire9 Kitchen.</p>
+    </div>
+
+    <div class="entry-card">
+      <div class="entry-label">Enter your Watch Party code</div>
+      <div class="input-row">
+        <input
+          type="text"
+          class="code-input"
+          id="codeInput"
+          placeholder="e.g. budget-2026-inspire9"
+          autocomplete="off"
+          autocapitalize="none"
+          spellcheck="false"
+        >
+        <button class="join-code-btn" onclick="handleJoin()">Join &rarr;</button>
+      </div>
+      <div class="error-msg" id="errorMsg">That code wasn't found. Check the spelling and try again.</div>
+
+      <div class="divider-or">or</div>
+
+      <button class="create-btn" disabled>
+        Create a New Watch Party
+        <span class="coming-tag">Coming soon</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PARTY VIEW  (budget-2026-inspire9)
+════════════════════════════════════════════════════════ -->
+<div id="view-party">
+
+  <!-- Sticky mobile strip — shown only on small screens -->
+  <div class="mobile-join-strip">
+    <div class="mjs-text">
+      &#9654; Budget Watch Party
+      <small>Tap to join the live eVenue — free</small>
+    </div>
+    <a class="mjs-btn" href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" target="_blank">
+      Join Live &rarr;
     </a>
-    <div class="topbar-right">
-      <a href="https://inspire9.com" target="_blank">inspire9.com</a>
-      <div class="dot"></div>
-      <a href="https://budget.gov.au/" target="_blank">budget.gov.au</a>
-      <div class="dot"></div>
-      <span>Richmond, Melbourne</span>
-    </div>
-  </nav>
+  </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-eyebrow">
-        <span class="badge">&#x1F1E6;&#x1F1FA; Federal Budget</span>
-        <span class="badge-outline">inspire9 Initiative</span>
-      </div>
-      <h1 class="hero-title">
-        Budget<br>Watch Party
-        <span class="at">@</span>
-        <span class="brand">inspire9</span>
-      </h1>
-      <p class="hero-sub">
-        Join the inspire9 community to watch the <strong>Federal Budget announcement live</strong> together —
-        whether you're in the room or tuning in from anywhere in Australia.
-        Chat, react, and make sense of it all in real time.
-      </p>
-      <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-        <a href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" class="join-btn" style="display:inline-block; width:auto; padding: 0.85rem 2rem;">
-          Join the Watch Party &rarr;
-        </a>
-        <a href="https://budget.gov.au/" target="_blank" style="display:inline-flex; align-items:center; padding: 0.85rem 1.5rem; border:1px solid var(--border); border-radius:10px; color:var(--gold); font-weight:600; font-size:0.95rem; text-decoration:none; gap:6px;">
-          budget.gov.au &#x2197;
-        </a>
-      </div>
-    </div>
-
-    <!-- WATCH CARD -->
-    <div class="watch-card">
-      <div class="wc-label">&#x25B6; Live Watch Link</div>
-      <div class="wc-title">eVenue — Federal Budget 2025 Watch Party</div>
-      <a href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" class="join-btn">
-        Enter eVenue &rarr;
+  <div class="page-wrap">
+    <nav class="topbar">
+      <a href="https://inspire9.com" class="inspire9-logo" target="_blank">
+        <div class="i9-mark">i9</div>
+        <span class="i9-wordmark">inspire<span>9</span></span>
       </a>
-      <div class="url-pill">evenue.electronworkshop.com.au<br>/rooms/vpu-ci4-ut4-14k/join</div>
-      <div class="wc-note">
-        <span class="live-dot"></span>
-        Free for all online attendees · No account required
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-rule">
-
-  <!-- ATTENDANCE OPTIONS -->
-  <section class="options">
-    <div class="section-head">
-      <h2>How to attend</h2>
-    </div>
-    <div class="options-grid">
-
-      <!-- In-person -->
-      <div class="option-card members">
-        <div class="option-icon">&#x1F373;</div>
-        <h3>inspire9 Kitchen</h3>
-        <p>
-          Watch the Budget announcement live at the <strong>inspire9 Kitchen</strong> at Level 1, 41–43 Stewart Street, Richmond.
-          Gather with fellow members, enjoy great company, and react together in real time.
-        </p>
-        <p style="margin-top:0.75rem">
-          <strong>Exclusive to inspire9 members.</strong> Check your inbox or Slack for event details.
-        </p>
-        <span class="option-tag">Members Only</span>
-      </div>
-
-      <!-- Online -->
-      <div class="option-card online">
-        <div class="option-icon">&#x1F4BB;</div>
-        <h3>Online via eVenue</h3>
-        <p>
-          Join from anywhere, absolutely free. The <strong>eVenue</strong> platform — powered by Electron Workshop — lets online and in-person attendees
-          chat together while watching the Budget live.
-        </p>
-        <p style="margin-top:0.75rem">
-          No account, no cost. Just click the link and you're in.
-        </p>
-        <span class="option-tag">&#x2713; Free for Anyone</span>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="section-rule">
-
-  <!-- EVENUE SECTION -->
-  <section class="evenue-section">
-    <div class="section-head">
-      <h2>About eVenue</h2>
-    </div>
-    <div class="evenue-inner">
-      <div class="evenue-text">
-        <p>
-          <strong>eVenue</strong> is a live event platform that bridges the gap between people in the room and people online.
-          Watch a shared stream together while chatting in real time — everyone in the same conversation,
-          regardless of where they are.
-        </p>
-        <p>
-          eVenue for this event is sponsored by <strong>Electron Workshop</strong>, Melbourne's community-driven digital infrastructure provider.
-        </p>
-      </div>
-      <ul class="feature-list">
-        <li>
-          <span class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>Shared live stream</strong> — everyone watches the same Budget broadcast together</span>
-        </li>
-        <li>
-          <span class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>Unified live chat</strong> — in-person and online attendees in one conversation</span>
-        </li>
-        <li>
-          <span class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>No login needed</strong> — just join the link, pick a name, and you're live</span>
-        </li>
-        <li>
-          <span class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>Free for all</strong> — the eVenue is open to anyone online, anywhere in Australia</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <hr class="section-rule">
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-left">
-      An <strong>inspire9</strong> community initiative &nbsp;·&nbsp;
-      <a href="https://inspire9.com" target="_blank">inspire9.com</a>
-      &nbsp;·&nbsp; Level 1, 41–43 Stewart St, Richmond VIC 3121<br>
-      Budget information: <a href="https://budget.gov.au/" target="_blank">budget.gov.au</a>
-    </div>
-
-    <div class="sponsors">
-      <span class="sponsor-label">eVenue sponsored by</span>
-      <div class="sponsor-divider"></div>
-      <a href="https://electronworkshop.com.au" class="ew-logo" target="_blank">
-        <div class="ew-mark">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <circle cx="9" cy="9" r="3" stroke="#7ab8f0" stroke-width="1.5"/>
-            <ellipse cx="9" cy="9" rx="8" ry="4" stroke="#7ab8f0" stroke-width="1" stroke-dasharray="0"/>
-            <ellipse cx="9" cy="9" rx="8" ry="4" transform="rotate(60 9 9)" stroke="#7ab8f0" stroke-width="1" opacity="0.5"/>
-            <ellipse cx="9" cy="9" rx="8" ry="4" transform="rotate(-60 9 9)" stroke="#7ab8f0" stroke-width="1" opacity="0.5"/>
-          </svg>
+      <div class="party-topbar-right">
+        <button class="back-btn" onclick="goHome()">
+          &larr; All Watch Parties
+        </button>
+        <div class="topbar-nav">
+          <a href="https://inspire9.com" target="_blank">inspire9.com</a>
+          <div class="dot"></div>
+          <a href="https://budget.gov.au/" target="_blank">budget.gov.au</a>
         </div>
-        <div class="ew-wordmark">
-          Electron Workshop
-          <small>eVenue sponsor</small>
-        </div>
-      </a>
-    </div>
-  </footer>
+      </div>
+    </nav>
 
+    <!-- Hero -->
+    <section class="party-hero">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="badge">&#127462;&#127482; Federal Budget</span>
+          <span class="badge-outline">inspire9 Initiative</span>
+        </div>
+        <h1 class="party-title">
+          Budget<br>Watch Party
+          <span class="at"> @ </span><span class="brand">inspire9</span>
+        </h1>
+        <p class="party-sub">
+          Watch the <strong>Federal Budget announcement live</strong> with the inspire9 community —
+          gather in the Kitchen or join from anywhere via eVenue.
+          Chat with everyone in real time, whether you're in the room or online.
+        </p>
+        <div class="hero-cta-row">
+          <a class="primary-btn" href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" target="_blank">
+            &#9654; Enter eVenue
+          </a>
+          <a class="secondary-link" href="https://budget.gov.au/" target="_blank">
+            budget.gov.au &#8599;
+          </a>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="wc-eyebrow">&#9654; Live Watch Link</div>
+        <div class="wc-title">eVenue &mdash; Budget 2026 Watch Party</div>
+        <a class="watch-join-btn" href="https://evenue.electronworkshop.com.au/rooms/vpu-ci4-ut4-14k/join" target="_blank">
+          Join on eVenue &rarr;
+        </a>
+        <div class="url-pill">evenue.electronworkshop.com.au<br>/rooms/vpu-ci4-ut4-14k/join</div>
+        <div class="wc-note">
+          <span class="live-dot"></span>
+          Free for all online attendees &middot; No account required
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- How to attend -->
+    <section class="options-section">
+      <div class="section-head"><h2>How to attend</h2></div>
+      <div class="options-grid">
+        <div class="option-card members">
+          <div class="option-icon">&#x1F373;</div>
+          <h3>inspire9 Kitchen</h3>
+          <p>Watch live at the <strong>inspire9 Kitchen</strong>, Level 1, 41&ndash;43 Stewart Street, Richmond. Gather with fellow members and react together in person.</p>
+          <p><strong>Exclusive to inspire9 members.</strong> Check your inbox or Slack for details.</p>
+          <span class="option-tag">Members Only</span>
+        </div>
+        <div class="option-card online">
+          <div class="option-icon">&#x1F4BB;</div>
+          <h3>Online via eVenue</h3>
+          <p>Join from anywhere &mdash; completely free. <strong>eVenue</strong> by Electron Workshop connects online and in-person attendees in one live chat while watching together.</p>
+          <p>No account, no cost. Just click the link and you&rsquo;re in.</p>
+          <span class="option-tag">&#x2713; Free for Anyone</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- eVenue -->
+    <section class="evenue-section">
+      <div class="section-head"><h2>About eVenue</h2></div>
+      <div class="evenue-grid">
+        <div class="evenue-text">
+          <p><strong>eVenue</strong> is a live event platform that bridges in-room and online audiences. Everyone watches the same stream while chatting together &mdash; no divide between who&rsquo;s there and who&rsquo;s remote.</p>
+          <p>This eVenue is sponsored by <strong>Electron Workshop</strong>, Melbourne&rsquo;s community-driven digital infrastructure provider.</p>
+        </div>
+        <ul class="feature-list">
+          <li>
+            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Shared live stream</strong> &mdash; everyone watches the same Budget broadcast</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Unified live chat</strong> &mdash; in-person and online in one conversation</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>No login needed</strong> &mdash; pick a name and you&rsquo;re live instantly</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#4ade80" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Free for all</strong> &mdash; open to anyone online, anywhere in Australia</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <footer class="footer">
+      <div class="footer-left">
+        An <strong>inspire9</strong> community initiative &middot;
+        <a href="https://inspire9.com" target="_blank">inspire9.com</a>
+        &middot; Level 1, 41&ndash;43 Stewart St, Richmond VIC 3121<br>
+        Budget info: <a href="https://budget.gov.au/" target="_blank">budget.gov.au</a>
+        &middot; Code: <code style="font-size:11px;color:var(--muted);background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:4px;">budget-2026-inspire9</code>
+      </div>
+      <div class="sponsors">
+        <span class="sponsor-label">eVenue sponsored by</span>
+        <div class="sponsor-rule"></div>
+        <a class="ew-logo" href="https://electronworkshop.com.au" target="_blank">
+          <div class="ew-mark">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <circle cx="8.5" cy="8.5" r="2.5" stroke="#7ab8f0" stroke-width="1.3"/>
+              <ellipse cx="8.5" cy="8.5" rx="7.5" ry="3.5" stroke="#7ab8f0" stroke-width="0.9"/>
+              <ellipse cx="8.5" cy="8.5" rx="7.5" ry="3.5" transform="rotate(60 8.5 8.5)" stroke="#7ab8f0" stroke-width="0.9" opacity="0.5"/>
+              <ellipse cx="8.5" cy="8.5" rx="7.5" ry="3.5" transform="rotate(-60 8.5 8.5)" stroke="#7ab8f0" stroke-width="0.9" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="ew-wordmark">
+            Electron Workshop
+            <small>eVenue sponsor</small>
+          </div>
+        </a>
+      </div>
+    </footer>
+  </div>
 </div>
+
+<!-- ══════════════════════════════════════════════════════
+     ROUTING
+════════════════════════════════════════════════════════ -->
+<script>
+  var VALID = { 'budget-2026-inspire9': true };
+
+  function showView(v) {
+    document.getElementById('view-home').style.display  = v === 'home'  ? 'block' : 'none';
+    document.getElementById('view-party').style.display = v === 'party' ? 'block' : 'none';
+    document.title = v === 'party' ? 'Budget Watch Party @ inspire9' : 'Watch Parties — inspire9';
+    window.scrollTo(0, 0);
+  }
+
+  function goHome(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    history.pushState({ view: 'home' }, '', getBase());
+    showView('home');
+    document.getElementById('codeInput').value = '';
+    clearError();
+  }
+
+  function getBase() {
+    var p = window.location.pathname;
+    // Strip trailing known code segment
+    for (var code in VALID) {
+      if (p.endsWith('/' + code)) return p.slice(0, -code.length - 1) || '/';
+    }
+    return p.replace(/\/$/, '') || '/';
+  }
+
+  function goParty(code, push) {
+    if (push) {
+      var base = getBase().replace(/\/$/, '');
+      history.pushState({ view: 'party', code: code }, '', base + '/' + code);
+    }
+    showView('party');
+  }
+
+  function clearError() {
+    document.getElementById('errorMsg').classList.remove('visible');
+    document.getElementById('codeInput').classList.remove('error');
+  }
+
+  function handleJoin() {
+    var raw = document.getElementById('codeInput').value.trim().toLowerCase();
+    clearError();
+    if (!raw) return;
+    if (VALID[raw]) {
+      goParty(raw, true);
+    } else {
+      var inp = document.getElementById('codeInput');
+      inp.classList.add('error');
+      document.getElementById('errorMsg').classList.add('visible');
+      setTimeout(function(){ inp.classList.remove('error'); }, 400);
+    }
+  }
+
+  document.getElementById('codeInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleJoin();
+    else clearError();
+  });
+
+  window.addEventListener('popstate', function(e) {
+    if (e.state && e.state.view === 'party') showView('party');
+    else showView('home');
+  });
+
+  // Init: check URL on first load
+  (function() {
+    var seg = window.location.pathname.split('/').filter(Boolean).pop() || '';
+    if (VALID[seg]) goParty(seg, false);
+    else showView('home');
+  })();
+</script>
 </body>
 </html>
