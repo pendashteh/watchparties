@@ -57,9 +57,9 @@ Add an object to the `parties` array. Org references are keys that resolve from 
 
 **Times entry:**
 ```json
-{ "type": "live", "label": "Tue 13 May · 7:30pm AEST", "start": "2026-05-13T19:30:00+10:00" }
+{ "type": "live", "start": "2026-05-13T19:30:00+10:00" }
 ```
-`type` controls badge colour: `"live"` (red, animated), `"replay"` (blue), `"playback"` (gold). `url` is optional — overrides the venue URL for that specific time slot.
+`type` controls badge colour: `"live"` (red, animated), `"replay"` (blue), `"playback"` (gold). The display label is derived from `start` — timezone abbreviation inferred from the UTC offset. `url` is optional — overrides the venue URL for that specific time slot.
 
 **Attendance card:**
 ```json

@@ -711,7 +711,7 @@ body {
         return '<div class="' + cls + '">' +
           '<span class="sat-dot"></span>' +
           '<span class="sat-type">' + esc(label) + '</span>' +
-          '<span class="sat-when">' + esc(t.label) + '</span>' +
+          '<span class="sat-when">' + esc(formatTimeLabel(t.start)) + '</span>' +
           '<a class="cal-btn" href="' + href + '" download="watch-party-' + esc(t.type) + '.ics">+ Calendar</a>' +
           '</div>';
       }).join('');
@@ -796,6 +796,30 @@ body {
     });
     lines.push('END:VCALENDAR');
     return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(lines.join('\r\n'));
+  }
+
+  function formatTimeLabel(iso) {
+    var d = new Date(iso);
+    var m = iso.match(/([+-])(\d{2}):(\d{2})$/);
+    var offsetMs = 0, tzLabel = 'UTC';
+    if (m) {
+      var sign = m[1] === '+' ? 1 : -1;
+      var h = parseInt(m[2]), min = parseInt(m[3]);
+      offsetMs = sign * (h * 60 + min) * 60000;
+      var net = sign * h + sign * min / 60;
+      tzLabel = net === 10 ? 'AEST' : net === 11 ? 'AEDT' :
+                net === 9.5 ? 'ACST' : net === 10.5 ? 'ACDT' :
+                net === 8 ? 'AWST' :
+                'UTC' + (sign > 0 ? '+' : '') + (sign * h) + (min ? ':' + String(min).padStart(2,'0') : '');
+    }
+    var w = new Date(d.getTime() + offsetMs);
+    var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var hrs = w.getUTCHours(), mins = w.getUTCMinutes();
+    var ampm = hrs >= 12 ? 'pm' : 'am';
+    hrs = hrs % 12 || 12;
+    var time = hrs + (mins ? ':' + String(mins).padStart(2, '0') : '') + ampm;
+    return days[w.getUTCDay()] + ' ' + w.getUTCDate() + ' ' + months[w.getUTCMonth()] + ' · ' + time + ' ' + tzLabel;
   }
 
   function timeStatus(t) {

@@ -20,8 +20,8 @@
         "note": "Free for all online attendees · No account required"
       },
       "times": [
-        { "type": "live",   "label": "Tue 13 May · 7:30pm AEST",  "start": "2026-05-13T19:30:00+10:00" },
-        { "type": "replay", "label": "Tue 13 May · 10:00pm AEST", "start": "2026-05-13T22:00:00+10:00" }
+        { "type": "live",   "start": "2026-05-13T19:30:00+10:00" },
+        { "type": "replay", "start": "2026-05-13T22:00:00+10:00" }
       ],
       "externalLinks": [
         { "label": "budget.gov.au ↗", "url": "https://budget.gov.au/" }
