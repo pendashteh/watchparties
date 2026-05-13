@@ -259,6 +259,11 @@ body {
 .sat-entry.live     .sat-type { background: rgba(192,41,42,0.15);  color: #f87171; }
 .sat-entry.replay   .sat-type { background: rgba(55,138,221,0.12); color: #7ab8f0; }
 .sat-entry.playback .sat-type { background: rgba(201,162,39,0.12); color: var(--gold-light); }
+.sat-entry.is-over  { opacity: 0.45; }
+.sat-entry.is-over  .sat-dot { background: var(--muted-dim) !important; animation: none !important; }
+.sat-entry.is-over  .sat-type { background: rgba(255,255,255,0.05); color: var(--muted-dim); }
+.sat-entry.is-soon  .sat-dot { background: var(--gold) !important; animation: pulse 1.6s infinite !important; }
+.sat-entry.is-soon  .sat-type { background: rgba(201,162,39,0.2); color: var(--gold-light); }
 .sat-when { flex: 1; font-size: 0.95rem; font-weight: 600; color: var(--white); }
 .cal-btn {
   display: inline-flex; align-items: center; gap: 4px;
@@ -700,9 +705,12 @@ body {
       tl.className = 'scheduled-at';
       var entries = party.times.map(function(t) {
         var href = makeICS([partyCalEvt(party, t)]);
-        return '<div class="sat-entry ' + esc(t.type) + '">' +
+        var status = timeStatus(t);
+        var label = status === 'over' ? 'Over' : status === 'soon' ? 'Soon' : t.type;
+        var cls = 'sat-entry ' + esc(t.type) + (status ? ' is-' + status : '');
+        return '<div class="' + cls + '">' +
           '<span class="sat-dot"></span>' +
-          '<span class="sat-type">' + esc(t.type) + '</span>' +
+          '<span class="sat-type">' + esc(label) + '</span>' +
           '<span class="sat-when">' + esc(t.label) + '</span>' +
           '<a class="cal-btn" href="' + href + '" download="watch-party-' + esc(t.type) + '.ics">+ Calendar</a>' +
           '</div>';
@@ -788,6 +796,14 @@ body {
     });
     lines.push('END:VCALENDAR');
     return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(lines.join('\r\n'));
+  }
+
+  function timeStatus(t) {
+    var now = Date.now();
+    var start = new Date(t.start).getTime();
+    if (now > start + 3 * 3600000) return 'over';
+    if (start - now < 3600000)     return 'soon';
+    return null;
   }
 
   function partyCalEvt(party, t) {
